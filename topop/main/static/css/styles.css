@@ -39,9 +39,13 @@ header{
     display: none;
 }
 ion-icon{
-    color: #fff;
     cursor: pointer;
     font-size: 20px;
+}
+i {
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
 }
 header .logo{
     flex: 1;
@@ -94,9 +98,10 @@ header ul li a{
     font-weight: 600;
     text-transform: uppercase;
     padding: 10px 15px;
+    transition: all .4s;
 }
 header ul li a:hover{
-    border-bottom: 2px solid cadetblue;
+    color: #e91e63;
 }
 header .menu{
     font-size: 2.5em;
@@ -299,136 +304,159 @@ header .menu{
 /* end of section title */
 /* Form */
 .contact {
-    position: relative;
-    min-height: 100vh;
-    padding: 50px 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: repeat url("../../static/image/dark-background-abstract-background-network-3d-background-3840x2160-8324.png");
-    background-size: cover;
+  position: relative;
+  min-height: 100vh;
+  padding: 50px 20px; /* Adjust padding for smaller screens */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: repeat url("../../static/image/dark-background-abstract-background-network-3d-background-3840x2160-8324.png");
+  background-size: cover;
 }
+
 .contact .content {
-    max-width: 800px;
-    text-align: center;
+  max-width: 800px;
+  text-align: center;
 }
+
 .contact .content h2 {
-    margin-top: 60px;
-    font-size: 36px;
-    font-weight: 500;
-    color: #00bcd4;
+  margin-top: 40px; /* Adjust margin for smaller screens */
+  font-size: 28px; /* Adjust font-size for smaller screens */
+  font-weight: 500;
+  color: #00bcd4;
 }
+
 .contact .content p {
-    font-weight: 300;
-    color: #fff;
+  font-weight: 300;
+  color: #fff;
 }
+
 .container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Adjust margin for smaller screens */
+  flex-wrap: wrap; /* Allow flex items to wrap on smaller screens */
 }
+
 .container .contactInfo {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
+  width: 100%; /* Adjust width for smaller screens */
+  max-width: 400px; /* Limit max-width for smaller screens */
+  margin-bottom: 20px; /* Add margin-bottom for smaller screens */
 }
+
 .container .contactInfo .box {
-    position: relative;
-    padding: 20px 0;
-    display: flex;
+  position: relative;
+  padding: 20px 0;
+  display: flex;
 }
+
 .container .contactInfo .box .icon {
-    min-width: 60px;
-    height: 60px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    font-size: 22px;
+  min-width: 60px;
+  height: 60px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 22px;
 }
+
 .container .contactInfo .box .text {
-    display: flex;
-    margin-left: 20px;
-    font-size: 16px;
-    color: #fff;
-    flex-direction: column;
-    font-weight: 300;
+  display: flex;
+  margin-left: 20px;
+  font-size: 16px;
+  color: #fff;
+  flex-direction: column;
+  font-weight: 300;
 }
+
 .container .contactInfo .box .text h3 {
-    font-weight: 500;
-    color: #00bcd4;
+  font-weight: 500;
+  color: #00bcd4;
 }
+
 .contactForm {
-    width: 40%;
-    padding: 40px;
-    background: #fff;
+  width: 100%; /* Adjust width for smaller screens */
+  max-width: 400px; /* Limit max-width for smaller screens */
+  padding: 20px; /* Adjust padding for smaller screens */
+  background: #fff;
+  margin-bottom: 20px; /* Add margin-bottom for smaller screens */
 }
+
 .contactForm h2 {
-    font-size: 30px;
-    color: #333;
-    font-weight: 500;
+  font-size: 24px; /* Adjust font-size for smaller screens */
 }
+
 .contactForm .inputBox {
-    position: relative;
-    width: 100%;
-    margin-top: 10px;
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
 }
+
 .contactForm .inputBox input,
 .contactForm .inputBox textarea {
-    width: 100%;
-    padding: 5px 0;
-    font-size: 16px;
-    margin: 10px 0;
-    border: none;
-    border-bottom: 2px solid #333;
-    outline: none;
-    resize: none;
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #333;
+  outline: none;
+  resize: none;
 }
+
 .contactForm .inputBox span {
-    position: absolute;
-    left: 0;
-    padding: 5px 0;
-    font-size: 16px;
-    margin: 10px 0;
-    pointer-events: none;
-    transition: 0.5s;
-    color: #666;
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  pointer-events: none;
+  transition: 0.5s;
+  color: #666;
 }
+
 .contactForm .inputBox input:focus ~ span,
 .contactForm .inputBox input:valid ~ span,
 .contactForm .inputBox textarea:focus ~ span,
 .contactForm .inputBox textarea:valid ~ span {
-    color: #e91e63;
-    font-size: 12px;
-    transform: translateY(-20px);
+  color: #e91e63;
+  font-size: 12px;
+  transform: translateY(-20px);
 }
+
 .contactForm .inputBox input[type="submit"] {
-    width: 100px;
-    background: #162938;
-    color: #2196f3;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    font-size: 18px;
-    overflow: hidden;
-    transition: 0.2s;
+  width: 100px;
+  background: #162938;
+  color: #2196f3;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  overflow: hidden;
+  transition: 0.2s;
 }
+
 .contactForm .inputBox input[type="submit"]:hover {
-    color: #e91e63;
-    background: #2196f3;
-    box-shadow: 0 0 10px #2196f3,0 0 40px #2196f3,0 0 80px #2196f3;
+  color: #e91e63;
+  background: #2196f3;
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
 }
 
 @media screen and (min-width: 1200px) {
-.contact {
+  .contact {
     width: 100%;
-}
-}
+    padding: 50px 100px;
+  }
 
+  .contact .content h2 {
+    margin-top: 60px;
+    font-size: 36px;
+  }
+}
 /* login form */
 .Bgimg {
     display: flex;
