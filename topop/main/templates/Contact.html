@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<!-- Navbar -->
+    <header>
+        <input type ="checkbox" name ="" id ="chk1">
+        <div class="logo"><h1>Vigiato</h1></div>
+            <div class="search-box">
+                <form>
+                    <label>
+                    <input type ="text" name ="search" id ="srch" placeholder="Search">
+                    </label>
+                    <button type ="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <ul>
+            <li><a href="/Home">Home</a></li>
+            <li><a href="/News">News</a></li>
+            <li><a href="/Shop">Codes</a></li>
+            <li><a href="/ContactUs">Contact</a></li>
+            <li>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+            </li>
+        </ul>
+            <div class="menu">
+                <label for="chk1">
+                    <i class="fa fa-bars"></i>
+                </label>
+            </div>
+    </header>
+<!-- Form -->
+    <section class="contact">
+        <div class="content ">
+        <h2>Contact Us</h2>
+        <p>sit amet dictum sit amet justo donec enim diam vulputate ut pharetra sit amet aliquam
+        sit amet dictum sit amet justo donec enim diam vulputate ut pharetra sit amet aliquam .</p>
+        </div>
+        </br>
+        </br>
+        </br>
+        <div class="container">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icon"><ion-icon name="call"></ion-icon></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>0992-163-7016</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><ion-icon name="mail"></ion-icon></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>radinraxer@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        <div class="contactForm">
+            <form>
+                <h2>Send Message</h2>
+                <div class="inputBox">
+                    <input id="usernameC" type="text" name="" required="required">
+                    <span>Full name</span>
+                </div>
+                <div class="inputBox">
+                    <input type="text" id="emailC" name="" required="required">
+                    <span>Email</span>
+                </div>
+                <div class="inputBox">
+                    <textarea id="messageC" required="required"></textarea>
+                    <span>Type your Message...</span>
+                </div>
+                <div class="inputBox">
+                    <input id="submitC" type="submit" name="" value="Send">
+                </div>
+            </form>
+        </div>
+        </div>
+    </section>
+<div class="resualt">
+    <textarea id="resualt" class="textR" readonly="yes">Hello Mother Fucker</textarea>
+</div>
+    <footer class="footer">
+        <div class="section-center">
+            <div class="social-icons">
+            <!-- social icon -->
+            <a href="#" class="social-icon">
+            <ion-icon name="navigate"></ion-icon>
+            </a>
+            <!-- end of social icon -->
+            <!-- social icon -->
+            <a href="#" class="social-icon">
+            <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+            <!-- end of social icon -->
+            <!-- social icon -->
+            <a href="#" class="social-icon">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <!-- end of social icon -->
+        </div>
+        <p class="footer-text">
+            &copy;2023 <span class="text-primary">Vigiato</span>. all rights
+            reserved
+        </p>
+        </div>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        var socket = new WebSocket(
+            'ws://' + window.location.host +
+            '/ws/');
+
+        socket.onmessage =function (e) {
+            var message = e.data;
+            document.querySelector('').value += (message + '\n');
+        };
+
+        socket.onclose = function (e) {
+            console.error('socket close unexpectedly')
+        }
+
+        document.querySelector('#usernameC').focus();
+        document.querySelector('#usernameC').onkeyup = function (e) {
+            if (e.keyCode === 13) { //enter, return
+                document.querySelector('#submitC').click ();
+            }
+        };
+
+        document.querySelector('#submitC').onclick = function (e) {
+            var messageInputDom = document.querySelector('#usernameC');
+            var message = messageInputDom.value;
+            socket.send(message)
+
+            messageInputDom.value = '';
+        }
+
+        document.querySelector('#emailC').focus();
+        document.querySelector('#emailC').onkeyup = function (e) {
+            if (e.keyCode === 13) { //enter, return
+                document.querySelector('#submitC').click ();
+            }
+        };
+
+        document.querySelector('#submitC').onclick = function (e) {
+            var messageInputDom = document.querySelector('#emailC');
+            var message = messageInputDom.value;
+            socket.send(message)
+
+            messageInputDom.value = '';
+        }
+
+        document.querySelector('#messageC').focus();
+        document.querySelector('#messageC').onkeyup = function (e) {
+            if (e.keyCode === 13) { //enter, return
+                document.querySelector('#submitC').click ();
+            }
+        };
+
+        document.querySelector('#submitC').onclick = function (e) {
+            var messageInputDom = document.querySelector('#messageC');
+            var message = messageInputDom.value;
+            socket.send(message)
+
+            messageInputDom.value = '';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup/Login</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="Bgimg">
+<!-- Navbar -->
+    <header>
+        <input type ="checkbox" name ="" id ="chk1">
+        <div class="logo"><h1>Vigiato</h1></div>
+            <div class="search-box">
+                <form>
+                    <label>
+                    <input type ="text" name ="search" id ="srch" placeholder="Search">
+                    </label>
+                    <button type ="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <ul>
+            <li><a href="/Home">Home</a></li>
+            <li><a href="/News">News</a></li>
+            <li><a href="/Shop">Codes</a></li>
+            <li><a href="/ContactUs">Contact</a></li>
+            <li>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+            </li>
+        </ul>
+            <div class="menu">
+                <label for="chk1">
+                    <i class="fa fa-bars"></i>
+                </label>
+            </div>
+    </header>
+<!-- Navbar end -->
+<!-- Start Form login / Register -->
+<!-- Login -->
+    <div class="wrapper">
+        <div class="form-box login">
+
+            <h2>Login</h2>
+            <form method="POST" action="{% url "LoginSignup/" %}">
+                {% csrf_token %}
+                <div class="input-box">
+                    <span class="iconNew"><ion-icon name="mail"></ion-icon></span>
+                    <input id="loginemail" type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="iconNew"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input id="loginpassword" type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remeber-forgot">
+                    <label><input type="checkbox">Remeber me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button id="loginsubmit" type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account?<a class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+<!-- Regis -->
+        <div class="form-box register">
+            <h2>Registeration</h2>
+            <form id="form" method="POST" action="#">
+                {% csrf_token %}
+                <div class="input-box">
+                    <span class="iconNew"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" id="username" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="iconNew"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" id="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="iconNew"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" id="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remeber-forgot">
+                    <label><input type="checkbox">Agree to the terms & conditons</label>
+                </div>
+                <button type="submit" id="submit" class="btn">Sign Up</button>
+                <div class="login-register">
+                    <p>Already have an account?<a class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../static/js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
