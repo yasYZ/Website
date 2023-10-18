@@ -38,9 +38,10 @@ header{
 #chk1{
     display: none;
 }
-i{
+ion-icon{
     color: #fff;
     cursor: pointer;
+    font-size: 20px;
 }
 header .logo{
     flex: 1;
