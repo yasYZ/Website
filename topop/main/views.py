@@ -22,20 +22,21 @@ def news(request):
 
 def Login_Register(request):
     if request.method == "POST":
-        username = request.POST('username')
-        password = request.POST('password')
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            messages.success(request, ("Logged in"))
+            messages.success(request, "Logged in")
             return redirect("Home")
         else:
-            messages.success(request, ("we have problem in loggin"))
+            messages.error(request, "There was a problem logging in")
             return redirect("LoginSignup")
     else:
         return render(request, 'LoginSignup.html')
 
 
 def log_out(request):
-    pass
+    logout(request)
+    return redirect("Home")
