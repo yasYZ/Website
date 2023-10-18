@@ -65,7 +65,7 @@
                 </div>
             </div>
         <div class="contactForm">
-            <form>
+            <form method="POST" action="/Contactus/">
                 <h2>Send Message</h2>
                 <div class="inputBox">
                     <input id="usernameC" type="text" name="" required="required">
@@ -116,64 +116,5 @@
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script>
-        var socket = new WebSocket(
-            'ws://' + window.location.host +
-            '/ws/');
-
-        socket.onmessage =function (e) {
-            var message = e.data;
-            document.querySelector('').value += (message + '\n');
-        };
-
-        socket.onclose = function (e) {
-            console.error('socket close unexpectedly')
-        }
-
-        document.querySelector('#usernameC').focus();
-        document.querySelector('#usernameC').onkeyup = function (e) {
-            if (e.keyCode === 13) { //enter, return
-                document.querySelector('#submitC').click ();
-            }
-        };
-
-        document.querySelector('#submitC').onclick = function (e) {
-            var messageInputDom = document.querySelector('#usernameC');
-            var message = messageInputDom.value;
-            socket.send(message)
-
-            messageInputDom.value = '';
-        }
-
-        document.querySelector('#emailC').focus();
-        document.querySelector('#emailC').onkeyup = function (e) {
-            if (e.keyCode === 13) { //enter, return
-                document.querySelector('#submitC').click ();
-            }
-        };
-
-        document.querySelector('#submitC').onclick = function (e) {
-            var messageInputDom = document.querySelector('#emailC');
-            var message = messageInputDom.value;
-            socket.send(message)
-
-            messageInputDom.value = '';
-        }
-
-        document.querySelector('#messageC').focus();
-        document.querySelector('#messageC').onkeyup = function (e) {
-            if (e.keyCode === 13) { //enter, return
-                document.querySelector('#submitC').click ();
-            }
-        };
-
-        document.querySelector('#submitC').onclick = function (e) {
-            var messageInputDom = document.querySelector('#messageC');
-            var message = messageInputDom.value;
-            socket.send(message)
-
-            messageInputDom.value = '';
-        }
-    </script>
 </body>
 </html>
