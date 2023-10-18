@@ -18,13 +18,13 @@ class login_account(models.Model):
     passwordA = models.CharField(max_length=500)
 
     def __str__(self):
-        return (f'{self.nameA}  {self.emailA}  {self.password}')
+        return (f'{self.nameA}  {self.emailA}  {self.passwordA}')
 
 
 class Plans(models.Model):
-    nameA = models.CharField(max_length=20)
-    emailA = models.EmailField(max_length=100)
-    password = models.CharField(max_length=500)
+    nameP = models.CharField(max_length=20)
+    emailP = models.EmailField(max_length=100)
+    passwordP = models.CharField(max_length=500)
 
     def __str__(self):
-        return (f'{self.nameA}  {self.emailA}  {self.password}')
+        return (f'{self.nameP}  {self.emailP}  {self.passwordP}')
