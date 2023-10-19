@@ -1,13 +1,18 @@
 from django.shortcuts import render, redirect
-from .models import login_account
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.core.mail import send_mail
+import random
 
 
 def run_index(request):
+
     return render(request, 'index.html')
+
+
+def index():
+    pass
 
 
 def run_codes_page(request):
@@ -33,7 +38,7 @@ def Login_Register(request):
             messages.success(request, "Logged in")
             return redirect("Home")
         else:
-            messages.error(request, "There was a problem in logging in")
+            messages.success(request, "There was a problem in logging in")
             return redirect("LoginSignup")
     else:
         return render(request, 'LoginSignup.html')
@@ -41,6 +46,7 @@ def Login_Register(request):
 
 def log_out(request):
     logout(request)
+    messages.success(request, "You successfully Logged out!")
     return redirect("Home")
 
 
@@ -60,3 +66,13 @@ def register(request):
         else:
             messages.error(request, "Invalid form data. Please try again.")
     return render(request, 'LoginSignup.html')
+
+
+def forgot_password(request):
+    """if someone forgot their password enjoy reset it"""
+
+    return render(request, 'ForgotPassword.html')
+
+
+def product(request):
+    pass
