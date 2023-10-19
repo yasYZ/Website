@@ -74,5 +74,10 @@ def forgot_password(request):
     return render(request, 'ForgotPassword.html')
 
 
+def password_reset(request):
+    """youtube vidio {https://www.youtube.com/watch?v=0pa75ch0S4E}"""
+    pass
+
+
 def product(request):
     pass

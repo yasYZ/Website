@@ -11,5 +11,6 @@ urlpatterns = [
     path('Register/', register, name="Register"),
     path('Logout/', log_out, name="Logout"),
     path('ForgotPassword/', forgot_password, name="forgot_password"),
+    path('ResetPassword/', forgot_password, name="ResetPassword"),
     path('Product/', product, name="Product"),
 ]
