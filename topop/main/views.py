@@ -2,8 +2,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
-from django.core.mail import send_mail
-import random
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse
+from django.contrib.auth.forms import PasswordResetForm
+
+
 
 
 def run_index(request):
@@ -69,8 +72,6 @@ def register(request):
 
 
 def forgot_password(request):
-    """if someone forgot their password enjoy reset it"""
-
     return render(request, 'ForgotPassword.html')
 
 

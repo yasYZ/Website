@@ -3,7 +3,6 @@ from .views import run_index, Login_Register, run_codes_page, news, contactus, r
 
 urlpatterns = [
     path('Home/', run_index, name="Home"),
-    path('/', run_index, name="Home"),
     path('LoginSignup/', Login_Register, name="LoginSignup"),
     path('Shop/', run_codes_page, name="codes"),
     path('News/', news, name="news"),
@@ -11,6 +10,5 @@ urlpatterns = [
     path('Register/', register, name="Register"),
     path('Logout/', log_out, name="Logout"),
     path('ForgotPassword/', forgot_password, name="forgot_password"),
-    path('ResetPassword/', forgot_password, name="ResetPassword"),
     path('Product/', product, name="Product"),
 ]
