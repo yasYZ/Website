@@ -14,7 +14,14 @@
     <link rel = "stylesheet" href = "../static/css/stylecode.css">
 </head>
 <body>
-
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
     <!-- navbar -->
     <header>
         <input type ="checkbox" name ="" id ="chk1">
@@ -33,9 +40,13 @@
             <li><a href="/Shop">Codes</a></li>
             <li><a href="/ContactUs">Contact</a></li>
             <li>
+                {% if user.is_authenticated %}
+                    <a href="/Logout"><ion-icon name="log-out"></ion-icon></a>
+                {% else %}
+                    <a href="/LoginSignup"><ion-icon name="log-in"></ion-icon></a>
+                {% endif %}
                 <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                <a href="#"><ion-icon name="cart"></ion-icon></a>
-                <a href="#"><ion-icon name="log-in"></ion-icon></a>
+                <a href="/Product"><ion-icon name="cart"></ion-icon></a>
             </li>
         </ul>
             <div class="menu">

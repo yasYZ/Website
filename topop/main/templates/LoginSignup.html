@@ -58,7 +58,7 @@
                 </div>
                 <div class="remeber-forgot">
                     <label><input type="checkbox">Remeber me</label>
-                    <a class="reset-link">Forgot Password?</a>
+                    <a href="#">Forgot Password?</a>
                 </div>
                 <button id="loginsubmit" type="submit" class="btn">Login</button>
                 <div class="login-register">
@@ -92,28 +92,6 @@
                 <button type="submit" id="submit" class="btn">Sign Up</button>
                 <div class="login-register">
                     <p>Already have an account?<a class="login-link">Login</a></p>
-                </div>
-            </form>
-        </div>
-        <!--forgot password-->
-        <div class="form-box reset">
-
-            <h2>Reset password</h2>
-            <form method="POST" action="">
-                {% csrf_token %}
-                <div class="input-box">
-                    <span class="iconNew"><ion-icon name="person"></ion-icon></span>
-                    <input type="text" name="" required>
-                    <label>Username</label>
-                </div>
-                <div class="input-box">
-                    <span class="iconNew"><ion-icon name="mail"></ion-icon></span>
-                    <input type="email" name="" required>
-                    <label>Email</label>
-                </div>
-                <button id="login2submit" type="submit" class="btn">Login</button>
-                <div class="login-register">
-                    <a class="reset-link">Find you password?</a>
                 </div>
             </form>
         </div>
