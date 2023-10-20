@@ -521,23 +521,6 @@ header .menu{
     transition: transform .18s ease;
     transform: translateX(0);
 }
-.wrapper .form-box.reset {
-    position: absolute;
-    transform: translateX(-800px);
-}
-.wrapper .form-box.reset {
-    position: absolute;
-    transition: none;
-    transform: translateX(-800px);
-}
-.wrapper.active2 .form-box.reset {
-    transition: transform .18s ease;
-    transform: translateX(0);
-}
-.wrapper.active2 .form-box.login {
-    transition: none;
-    transform: translateX(-800px);
-}
 .form-box h2 {
     font-size: 2em;
     color: #162938;
@@ -550,12 +533,6 @@ header .menu{
     font-family: sans-serif;
     margin: 30px 0;
 }
-
-#form input{
-    height: 45px;
-    width: 42px;
-}
-
 .input-box label {
     position: absolute;
     top: 50%;
@@ -1241,7 +1218,7 @@ a {
 }
 }
 @media screen and (min-width: 1200px) {
-    .resualt {
-        width: 100%;
-    }
+.resualt {
+    width: 100%;
+}
 }
