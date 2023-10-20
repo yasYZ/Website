@@ -5,8 +5,11 @@ from django.contrib.auth.models import User
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.contrib.auth.forms import PasswordResetForm
-
-
+from django.contrib.auth.models import User
+from django.template.loader import render_to_string
+from django.db.models.query_utils import Q
+from django.contrib.auth.tokens import default_token_generator
+from django.utils.encoding import force_bytes
 
 
 def run_index(request):
@@ -76,8 +79,22 @@ def forgot_password(request):
 
 
 def password_reset(request):
-    """youtube vidio {https://www.youtube.com/watch?v=0pa75ch0S4E}"""
-    pass
+    if request.method == "POST":
+        password_form = PasswordResetForm(request.POST)
+    else:
+        password_form = PasswordResetForm()
+    context = ({
+        "password_form": password_form,
+    })
+    return render(request, 'ResetPassword.html', context)
+
+
+def reset_password_done(request):
+    render(request, 'ResetPassword_Done.html')
+
+
+def forgot_password_done(request):
+    render(request, 'ForgetPassword_Done.html')
 
 
 def product(request):
