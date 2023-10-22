@@ -1,6 +1,6 @@
 from django.urls import path
 from django.views.generic import RedirectView
-from .views import run_index, Login_Register, run_codes_page, news, contactus, register, forgot_password, product, log_out, password_reset, reset_password_done, forgot_password_done
+from .views import run_index, Login_Register, run_codes_page, news, contactus, register, forgot_password, product, log_out, reset_password, reset_password_done, forgot_password_done
 
 urlpatterns = [
     path('', RedirectView.as_view(url="/Home", permanent=True)),
@@ -12,7 +12,7 @@ urlpatterns = [
     path('Register/', register, name="Register"),
     path('Logout/', log_out, name="Logout"),
     path('ForgotPassword/', forgot_password, name="forgot_password"),
-    path('ResetPassword/', password_reset, name="password_reset"),
+    path('ResetPassword/<uid64>/<token>/', reset_password, name="password_reset"),
     path('ResetPasswordDone/', reset_password_done, name="reset_password_done_pg"),
     path('ForgetPasswordDone/', forgot_password_done, name="forget_password_done_pg"),
     path('Product/', product, name="Product"),

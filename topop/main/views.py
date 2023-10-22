@@ -1,17 +1,15 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
-from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse
-from django.contrib.auth.forms import PasswordResetForm
-from django.contrib.auth.models import User
-from django.template.loader import render_to_string
-from django.db.models.query_utils import Q
 from django.contrib.auth.tokens import default_token_generator
-from django.utils.encoding import force_bytes
-from django.utils.http import urlsafe_base64_encode
-
+from django.core.mail import send_mail
+from django.core.exceptions import ObjectDoesNotExist
+from topop.settings import EMAIL_HOST_USER
+from django.contrib.auth.forms import SetPasswordForm
+from django.urls import reverse
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.encoding import force_bytes, force_str
 
 def run_index(request):
 
@@ -76,40 +74,62 @@ def register(request):
 
 
 def forgot_password(request):
+    if request.method == 'POST':
+        email = request.POST.get('forgot-mail')
+        try:
+            user = User.objects.get(email=email)
+            token = default_token_generator.make_token(user)
+            uid64 = user.id
+            reset_link = request.build_absolute_uri(f'/Resetpassword/{uid64}/{token}/')
+            message = (f"""
+                Fa
+                ______________________________
+                سلام {user.username}!
+                
+                
+                ابن پیام صرافا برای بازگرداندن گذرواژه شما میباشد
+                
+                اگر بازگردادن پسورد خود اطمینان دارید,
+                 بر روی لینک زیر کلیک نمایید
+                {reset_link}
+                
+                توجه داشته باشید این لینک معمولا
+                 یک بار مصرف است
+                
+                با تشکر تیم پشتیبانی TopUp
+                ______________________________
+                En
+                Hi {user.username}!
+                
+                this message for reset password 
+                this {email} email
+                if you want reset your password 
+                press link below!
+                {reset_link}
+                
+                dont forget this link usually used 
+                for one time
+                
+                Thank you!
+                The TopUP Team!
+                this message CopyRighted by TopUP
+                ______________________________""")
+
+            send_mail(subject='Password Reset', message=message, from_email=EMAIL_HOST_USER, recipient_list=[email], fail_silently=False)
+            return render(request, 'En/ForgotPassword_Done.html')
+        except ObjectDoesNotExist:
+            return HttpResponse("<h2>we have problem in send email<h2/>")
     return render(request, 'En/ForgotPassword.html')
 
 
-def password_reset(request):
-    if request.method == "POST":
-        password_form = PasswordResetForm()
-        data = password_form.cleaned_data.get('foremail')
-        user_email = User.objects.filter(Q(email=data))
-        if user_email.exists():
-            for user in user_email:
-                subject = 'Password Request'
-                email_template_name = 'templates/Email-text.txt'
-                parameters = {
-                    'email': user.email,
-                    'domain': '127.0.0.1',
-                    'site_name': 'TopUP',
-                    'uid': urlsafe_base64_encode(force_bytes(user.pk)),
-                    'token': default_token_generator.make_token(user),
-                    'protocol': 'https',
-
-                }
-                email = render_to_string(email_template_name, parameters)
-                try:
-                    send_mail(subject, email, '', [user.email], fail_silently=False)
-                except Exception as ex:
-                    messages.error(request, f"Email send failed. Error: {str(ex)}")
-            else:
-                return redirect("ForgetPasswordDone")
-    else:
-        password_form = PasswordResetForm(request.POST)
-    context = ({
-        "password_form": password_form,
-    })
-    return render(request, 'En/ResetPassword.html', context)
+def reset_password(request, uid64, token):
+    uid64 = force_str(urlsafe_base64_encode(uid64))
+    form = SetPasswordForm(user=request.user, data=request.POST.get('new_password1') or None)
+    if request.method == 'POST' and form.is_valid():
+        form.save()
+        messages.success(request, "Your password has been successfully reset.")
+        return redirect('ResetPasswordDone')
+    return render(request, 'ResetPassword_Done.html', {'form': form})
 
 
 def reset_password_done(request):
