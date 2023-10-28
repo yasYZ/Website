@@ -9,10 +9,9 @@ from topop.settings import EMAIL_HOST_USER
 from django.contrib.auth.forms import SetPasswordForm
 from django.urls import reverse
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-from django.utils.encoding import force_bytes, force_str
+from django.utils.encoding import force_bytes
 
 def run_index(request):
-
     return render(request, 'En/index.html')
 
 
@@ -79,36 +78,31 @@ def forgot_password(request):
         try:
             user = User.objects.get(email=email)
             token = default_token_generator.make_token(user)
-            uid64 = user.id
-            reset_link = request.build_absolute_uri(f'/Resetpassword/{uid64}/{token}/')
+            uidb64 = user.id
+            reset_link = request.build_absolute_uri(f'/ResetPassword/{uidb64}/{token}/')
             message = (f"""
-                Fa
                 ______________________________
-                سلام {user.username}!
+                Fa
+                سلام{user.username}!
                 
                 
                 ابن پیام صرافا برای بازگرداندن گذرواژه شما میباشد
                 
-                اگر بازگردادن پسورد خود اطمینان دارید,
-                 بر روی لینک زیر کلیک نمایید
+                اگر بازگردادن پسورد خود اطمینان دارید, بر روی لینک زیر کلیک نمایید
                 {reset_link}
                 
-                توجه داشته باشید این لینک معمولا
-                 یک بار مصرف است
+                توجه داشته باشید این لینک معمولا یک بار مصرف است
                 
                 با تشکر تیم پشتیبانی TopUp
                 ______________________________
                 En
                 Hi {user.username}!
                 
-                this message for reset password 
-                this {email} email
-                if you want reset your password 
-                press link below!
+                this message for reset password this {email} email
+                if you want reset your password press link below!
                 {reset_link}
                 
-                dont forget this link usually used 
-                for one time
+                dont forget this link usually used for one time
                 
                 Thank you!
                 The TopUP Team!
@@ -122,14 +116,18 @@ def forgot_password(request):
     return render(request, 'En/ForgotPassword.html')
 
 
-def reset_password(request, uid64, token):
-    uid64 = force_str(urlsafe_base64_encode(uid64))
+def reset_password(request):
+    # url = generated_url
+    if request.method == 'GET':
+        request.method(urlsafe_base64_encode())
     form = SetPasswordForm(user=request.user, data=request.POST.get('new_password1') or None)
     if request.method == 'POST' and form.is_valid():
         form.save()
         messages.success(request, "Your password has been successfully reset.")
         return redirect('ResetPasswordDone')
-    return render(request, 'ResetPassword_Done.html', {'form': form})
+    else:
+        HttpResponse('<h2>we have problem in reset password, sorry dude!</h2>')
+    return render(request, 'ResetPassword_Done.html')
 
 
 def reset_password_done(request):
