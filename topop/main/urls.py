@@ -1,19 +1,24 @@
 from django.urls import path
 from django.views.generic import RedirectView
-from .views import run_index, Login_Register, run_codes_page, news, contactus, register, forgot_password, product, log_out, reset_password, reset_password_done, forgot_password_done
+from . import views
+
+
+handler404 = 'main.views.custom_404'
 
 urlpatterns = [
     path('', RedirectView.as_view(url="/Home", permanent=True)),
-    path('Home/', run_index, name="Home"),
-    path('LoginSignup/', Login_Register, name="LoginSignup"),
-    path('Shop/', run_codes_page, name="codes"),
-    path('News/', news, name="news"),
-    path('ContactUs/', contactus, name="Contactus"),
-    path('Register/', register, name="Register"),
-    path('Logout/', log_out, name="Logout"),
-    path('ForgotPassword/', forgot_password, name="forgot_password"),
-    path('ResetPassword/<uidb64>/<token>/', reset_password, name="reset_link"),
-    path('ResetPasswordDone/', reset_password_done, name="reset_password_done_pg"),
-    path('ForgetPasswordDone/', forgot_password_done, name="forget_password_done_pg"),
-    path('Product/', product, name="Product"),
+    # path(, views.product, name="Product"),
+    path('Home/', views.run_index, name="Home"),
+    path('LoginSignup/', views.Login_Register, name="LoginSignup"),
+    path('Shop/', views.run_codes_page, name="codes"),
+    path('News/', views.news, name="news"),
+    path('ContactUs/', views.contactus, name="Contactus"),
+    path('Register/', views.register, name="Register"),
+    path('Logout/', views.log_out, name="Logout"),
+    path('ForgotPassword/', views.forgot_password, name="forgot_password"),
+    path('ResetPassword/<str:uidb64>/<str:token>/', views.reset_password, name="reset_link"),
+    path('ResetPasswordDone/', views.reset_password_done, name="reset_password_done_pg"),
+    path('ForgetPasswordDone/', views.forgot_password_done, name="forget_password_done_pg"),
+    path('Product/', views.product, name="Product"),
+
 ]
