@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d1e13e1-266f-49e7-bf06-1d30d4fd8e9a" name="Changes" comment="backend v1.0.0.52" />
+    <list default="true" id="9d1e13e1-266f-49e7-bf06-1d30d4fd8e9a" name="Changes" comment="backend v1.0.0.52">
+      <change afterPath="$PROJECT_DIR$/topop/main/templates/En/Products/bootstrap_file.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_18_2023_7_01_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_18_2023_7_01_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_18_2023_7_21_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_18_2023_7_21_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topop/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/topop/main/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topop/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/topop/main/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topop/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/topop/main/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -24,6 +35,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/topop/main/urls.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -37,9 +51,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Main",
     "last_opened_file_path": "E:/python_projects/Web",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -53,6 +69,35 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\python_projects\web\topop\main\templates" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Website" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/topop" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/topop/manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.manage" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -71,6 +116,9 @@
       <workItem from="1697628409727" duration="322000" />
       <workItem from="1697630025950" duration="233000" />
       <workItem from="1697630523868" duration="528000" />
+      <workItem from="1698594003866" duration="73000" />
+      <workItem from="1698595790776" duration="1054000" />
+      <workItem from="1698761140569" duration="3905000" />
     </task>
     <task id="LOCAL-00001" summary="backend v1.0.0.52">
       <option name="closed" value="true" />
@@ -104,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697547186289</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="backend v1.0.0.52">
+      <option name="closed" value="true" />
+      <created>1698591708279</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698591708279</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,5 +180,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="backend v1.0.0.52" />
     <option name="LAST_COMMIT_MESSAGE" value="backend v1.0.0.52" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Web$manage.coverage" NAME="manage Coverage Results" MODIFIED="1698761239006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/topop" />
+    <SUITE FILE_PATH="coverage/Web$urls.coverage" NAME="urls Coverage Results" MODIFIED="1698511132758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/topop/main" />
+    <SUITE FILE_PATH="coverage/Web$views.coverage" NAME="views Coverage Results" MODIFIED="1698590403269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/topop/main" />
   </component>
 </project>

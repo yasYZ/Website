@@ -125,10 +125,10 @@ def reset_password(request, uidb64, token):
         if new_password == conf_password:
             user.set_password(new_password)
             user.save()
-        messages.success(request, "Your password is successfully changed")
-        return redirect('Home')
-        # else:
-        #     messages.error(request, "Your password doesnt match")
+            messages.success(request, "Your password is successfully changed")
+            return redirect('Home')
+        else:
+            messages.error(request, "Your password doesnt match")
     return render(request, 'En/ResetPassword.html', context)
 
 
@@ -140,9 +140,5 @@ def forgot_password_done(request):
     render(request, 'En/ForgetPassword_Done.html')
 
 
-def product(request):
-    pass
-
-
-def custom_404(request):
-    pass
+def custom_404(request, exception):
+    return render(request, 'En/ResetPassword_Done.html', status=404)

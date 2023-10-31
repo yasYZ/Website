@@ -2,12 +2,8 @@ from django.urls import path
 from django.views.generic import RedirectView
 from . import views
 
-
-handler404 = 'main.views.custom_404'
-
 urlpatterns = [
     path('', RedirectView.as_view(url="/Home", permanent=True)),
-    # path(, views.product, name="Product"),
     path('Home/', views.run_index, name="Home"),
     path('LoginSignup/', views.Login_Register, name="LoginSignup"),
     path('Shop/', views.run_codes_page, name="codes"),
@@ -19,6 +15,4 @@ urlpatterns = [
     path('ResetPassword/<str:uidb64>/<str:token>/', views.reset_password, name="reset_link"),
     path('ResetPasswordDone/', views.reset_password_done, name="reset_password_done_pg"),
     path('ForgetPasswordDone/', views.forgot_password_done, name="forget_password_done_pg"),
-    path('Product/', views.product, name="Product"),
-
 ]
