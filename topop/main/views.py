@@ -12,10 +12,6 @@ def run_index(request):
     return render(request, 'En/index.html')
 
 
-def run_codes_page(request):
-    return render(request, 'En/Codeshop.html')
-
-
 def contactus(request):
     return render(request, 'En/Contact.html')
 

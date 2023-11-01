@@ -6,7 +6,6 @@ urlpatterns = [
     path('', RedirectView.as_view(url="/Home", permanent=True)),
     path('Home/', views.run_index, name="Home"),
     path('LoginSignup/', views.Login_Register, name="LoginSignup"),
-    path('Shop/', views.run_codes_page, name="codes"),
     path('News/', views.news, name="news"),
     path('ContactUs/', views.contactus, name="Contactus"),
     path('Register/', views.register, name="Register"),
