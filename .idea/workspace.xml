@@ -6,15 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9d1e13e1-266f-49e7-bf06-1d30d4fd8e9a" name="Changes" comment="backend v1.0.0.52">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topop/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/topop/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topop/main/templates/En/Codeshop.html" beforeDir="false" afterPath="$PROJECT_DIR$/topop/main/templates/En/Codeshop.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topop/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/topop/main/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topop/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/topop/main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topop/shop/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/topop/shop/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topop/shop/templates/En/Products/bootstrap_file.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/topop/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/topop/shop/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topop/shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/topop/shop/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topop/topop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/topop/topop/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +119,7 @@
       <workItem from="1698594003866" duration="73000" />
       <workItem from="1698595790776" duration="1054000" />
       <workItem from="1698761140569" duration="15184000" />
-      <workItem from="1698851836160" duration="7388000" />
+      <workItem from="1698851836160" duration="7764000" />
     </task>
     <task id="LOCAL-00001" summary="backend v1.0.0.52">
       <option name="closed" value="true" />
@@ -218,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698775609489</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="backend v1.0.0.52">
+      <option name="closed" value="true" />
+      <created>1698861088177</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1698861088177</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
