@@ -241,21 +241,21 @@
                 <h2 class = "position-relative d-inline-block">Special Selection</h2>
             </div>
             {% for item in products %}
-            <div class = "special-list row g-0">
-                <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
-                    <div class = "special-img position-relative overflow-hidden">
-                        <img src = "{{ item.picture.url }}" class = "w-100">
-                        <span class = "position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
-                            <i class = "fas fa-heart"></i>
-                        </span>
-                    </div>
-                    <div class = "text-center">
-                        <p class = "text-capitalize mt-3 mb-1">{{ item.name }}</p>
-                        <span class = "fw-bold d-block">T {{ item.price }}</span>
-                        <a href = "#" class = "btn btn-primary mt-3">Add to Cart</a>
+                <div class = "special-list row g-0">
+                    <div class = "special-item col-md-6 col-lg-4 col-xl-3 p-2">
+                        <div class = "special-img position-relative overflow-hidden">
+                            <img src = "../../static/image/Screenshot%202023-09-29%20204216.png" class = "w-100">
+                            <span class = "position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                                <i class = "fas fa-heart"></i>
+                            </span>
+                        </div>
+                        <div class = "text-center">
+                            <p class = "text-capitalize mt-3 mb-1">{{ item.name }}</p>
+                            <span class = "fw-bold d-block">T {{ item.price }}</span>
+                            <a href = "#" class = "btn btn-primary mt-3">Add to Cart</a>
+                        </div>
                     </div>
                 </div>
-            </div>
             {% endfor %}
         </div>
     </section>

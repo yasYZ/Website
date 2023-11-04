@@ -288,10 +288,12 @@ header .menu{
         -ms-transform: scale(1.2);
             transform: scale(1.2);
 }
-
+.special-list{
+    display: inline-block;
+}
 /* offers */
 #offers{
-    background: url(../images/offer_img.jpg) center/cover no-repeat;
+    background: url(../image/offer_img.jpg) center/cover no-repeat;
 }
 #offers .row{
     min-height: 60vh;
